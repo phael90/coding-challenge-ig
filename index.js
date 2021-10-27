@@ -75,7 +75,16 @@ getAverageGoalScore(data.getPlayers());
  */
 
 // Your code
+const getPlayerFieldPosition = (players, playersName) => {
+    players.filter( player => {
+        if ( typeof(playersName) !== 'string' ) return;
+        const playerMatch = player.name.toLowerCase() === playersName.toLowerCase();
+        playerMatch && console.log(`NAME: ${player.name} ${player.lastname}; POSITION: ${player.position}`);
+        return playerMatch;
+    });
+};
 console.log('----------TEST #4----------');
+getPlayerFieldPosition(data.getPlayers(), "Diego");
 
 /**
  * Test 5
