@@ -47,8 +47,23 @@ playersNamesLengthDescendingOrder(data.getPlayers());
  */
 
 // Your code
-
-
+const getAverageGoalScore = (players) => {
+    let scoringChancePercentage;
+    const goalsArray = players.map( player => {
+        if(typeof(player.scoringChance) !== 'number') {
+            player.scoringChance = parseInt(player.scoringChance);
+        };
+        // ScoringChance of type other than 'number' will pollute the calculation
+        if(player.scoringChance === NaN) {
+            player.scoringChance = 0;
+        }
+        return player.scoringChance
+    });
+    scoringChancePercentage = goalsArray.reduce((a, b) => a + b) / goalsArray.length;
+    console.log(scoringChancePercentage);
+    return scoringChancePercentage;
+};
+getAverageGoalScore(data.getPlayers());
 
 /**
  * Test 4
