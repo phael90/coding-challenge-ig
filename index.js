@@ -12,8 +12,15 @@ const data = require("./data");
  */
 
  // Your code
-
-
+ const playersData = (players) => {
+    players.forEach( (player, index) => {
+       console.log(`PLAYER ${index + 1}`);
+       console.log(`NAME: ${player.name}`);
+       console.log(`LASTNAME: ${player.lastname}`);
+       console.log(`POSITION: ${player.position}`);
+   }); 
+};
+playersData(data.getPlayers());
 
 /**
  * Test 2
