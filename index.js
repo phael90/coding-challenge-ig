@@ -28,15 +28,16 @@ playersData(data.getPlayers());
  */
 
 // Your code
-const playersNamesLengthDescendingOrder = (players) => {
-    players.sort((a, b) => {
+const getSortedPlayersNames = (players) => {
+    const sortedPlayers = players.sort((a, b) => {
         return b.name.length - a.name.length;
+    }).map( player => {
+        return player.name;
     });
-    return players.map( player => {
-         console.log(player.name);
-    });
+    console.log(sortedPlayers);
+    return sortedPlayers;
 };
-playersNamesLengthDescendingOrder(data.getPlayers());
+getSortedPlayersNames(data.getPlayers());
 
 /**
  * Test 3
