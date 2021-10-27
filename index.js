@@ -12,7 +12,7 @@ const data = require("./data");
  */
 
  // Your code
- const playersData = (players) => {
+ const logPlayers = (players) => {
     players.forEach( (player, index) => {
        console.log(`PLAYER ${index + 1}`);
        console.log(`NAME: ${player.name}`);
@@ -20,7 +20,8 @@ const data = require("./data");
        console.log(`POSITION: ${player.position}`);
    }); 
 };
-playersData(data.getPlayers());
+console.log('----------TEST #1----------');
+logPlayers(data.getPlayers());
 
 /**
  * Test 2
@@ -37,6 +38,7 @@ const getSortedPlayersNames = (players) => {
     console.log(sortedPlayers);
     return sortedPlayers;
 };
+console.log('----------TEST #2----------');
 getSortedPlayersNames(data.getPlayers());
 
 /**
@@ -64,6 +66,7 @@ const getAverageGoalScore = (players) => {
     console.log(scoringChancePercentage);
     return scoringChancePercentage;
 };
+console.log('----------TEST #3----------');
 getAverageGoalScore(data.getPlayers());
 
 /**
@@ -72,8 +75,7 @@ getAverageGoalScore(data.getPlayers());
  */
 
 // Your code
-
-
+console.log('----------TEST #4----------');
 
 /**
  * Test 5
@@ -85,3 +87,4 @@ getAverageGoalScore(data.getPlayers());
  */
 
 // Your code
+console.log('----------TEST #5----------');
