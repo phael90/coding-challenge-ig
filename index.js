@@ -96,4 +96,20 @@ getPlayerFieldPosition(data.getPlayers(), "Diego");
  */
 
 // Your code
+const averageTeamScore = ( players ) => {
+    if ( !Array.isArray(players) ) return [];
+    const numberOfTeams = 2;
+
+    let sortPlayersData = players.sort(() => Math.random() - 0.5);
+    let numberOfPlayersInTeam = Math.floor(players.length / numberOfTeams);
+    let finalTeams = [];
+  
+    while ( finalTeams.length < numberOfTeams) {
+        finalTeams.push(sortPlayersData.splice(0, numberOfPlayersInTeam))
+    };
+    
+    console.log(`TEAM A: ${Math.round(getAverageGoalScore(finalTeams[0]))}`);
+    console.log(`TEAM B: ${Math.round(getAverageGoalScore(finalTeams[1]))}`);
+};
 console.log('----------TEST #5----------');
+averageTeamScore(data.getPlayers());
