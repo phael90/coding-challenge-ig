@@ -23,7 +23,7 @@ interface ITest1ComponentProps {
 }
 
 export const Test1Component = (props: ITest1ComponentProps) => {
-
+    return <p style={{ color: props.age >= 18 ? 'blue' : 'red'}}>{props.name}</p>
 }
 
 
